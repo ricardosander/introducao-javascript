@@ -1,14 +1,3 @@
-const recordMundiaDePeso = 597;
-const recordMundialDeAltura = 2.74;
-
-function verificaPesoInvalido(peso) {
-    return peso <= 0 || peso > recordMundiaDePeso;
-}
-
-function verificaAlturaInvalido(altura) {
-    return altura <= 0 || altura > recordMundialDeAltura;
-}
-
 function processarPacientes() {
 
     var pacientes = document.querySelectorAll('.paciente');
@@ -25,12 +14,12 @@ function processarPaciente(paciente) {
 
     var resultadoValidacao = undefined;
 
-    if (verificaPesoInvalido(peso)) {
-        resultadoValidacao = "Peso inválido.";
+    if (!validaPeso(peso)) {
+        resultadoValidacao = "Peso inválido";
     }
 
-    if (verificaAlturaInvalido(altura)) {
-        resultadoValidacao = "Altura inválida."
+    if (!validaAltura(altura)) {
+        resultadoValidacao = "Altura inválida"
     }
 
     var objPaciente = undefined;

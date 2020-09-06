@@ -9,15 +9,36 @@ function criarEventoAdicionarPaciente() {
 
 function adicionarPaciente() {
 
+    document.querySelector('#mensagens-erro').innerHTML = "";
+
     var form = document.querySelector('#form-adiciona');
 
     var paciente = carregaPaciente(form);
+
+    var erros = validaPaciente(paciente);
+
+    if (erros.length > 0) {
+        exibirErros(erros);
+        return;
+    }
+
     paciente.imc = calculaICM(paciente);
 
     form.reset();
 
     var tabelaPacientes = document.querySelector("#tabela-pacientes");
     tabelaPacientes.appendChild(criarLinhaPaciente(paciente));
+}
+
+function exibirErros(erros) {
+
+    var ul = document.querySelector('#mensagens-erro');
+
+    erros.forEach(erro => {
+        var li = document.createElement('li');
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
 }
 
 function carregaPaciente(form) {
