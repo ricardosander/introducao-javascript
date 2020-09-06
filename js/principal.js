@@ -7,3 +7,4 @@ alterarTitulo("Aparecida Nutricionista");
 
 processarPacientes();
 criarEventoAdicionarPaciente();
+prepararRemocaoDePaciente();
