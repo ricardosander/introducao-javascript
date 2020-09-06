@@ -26,6 +26,10 @@ function adicionarPaciente() {
 
     form.reset();
 
+    adicionaPacienteNaTabela(paciente);
+}
+
+function adicionaPacienteNaTabela(paciente) {
     var tabelaPacientes = document.querySelector("#tabela-pacientes");
     tabelaPacientes.appendChild(criarLinhaPaciente(paciente));
 }
