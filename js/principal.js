@@ -34,3 +34,39 @@ for (var paciente of pacientes) {
 
     paciente.querySelector(".info-imc").textContent = imc;
 }
+
+var botaoAdicionar = document.querySelector("#adicionar-paciente");
+botaoAdicionar.addEventListener('click', function(event) {
+    event.preventDefault();
+    
+    var form = document.querySelector('#form-adiciona');
+
+    var nome = form.nome.value;
+    var peso = form.peso.value;
+    var altura = form.altura.value;
+    var gordura = form.gordura.value;
+
+    form.reset();
+
+    var linha = document.createElement("tr");
+
+    var colunaNome = document.createElement("td");
+    colunaNome.textContent = nome;
+
+    var colunaPeso = document.createElement("td");
+    colunaPeso.textContent = peso;
+
+    var colunaAltura = document.createElement("td");
+    colunaAltura.textContent = altura;
+
+    var colunaGordura = document.createElement("td");
+    colunaGordura.textContent = gordura;
+
+    linha.appendChild(colunaNome);
+    linha.appendChild(colunaPeso);
+    linha.appendChild(colunaAltura);
+    linha.appendChild(colunaGordura);
+
+    var tabelaPacientes = document.querySelector("#tabela-pacientes");
+    tabelaPacientes.appendChild(linha);
+});
