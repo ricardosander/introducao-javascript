@@ -5,7 +5,7 @@ function prepararRemocaoDePaciente() {
     tabela.addEventListener('dblclick', function (event) {
 
         var linha = event.target.parentNode;
-        var nome = linha.children[0].textContent;
+        var nome = linha.querySelector('.info-nome').textContent;
 
         var confirmado = confirm("Deseja remover o paciente " + nome + "?");
 

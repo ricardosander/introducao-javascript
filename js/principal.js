@@ -6,5 +6,6 @@ function alterarTitulo(novoTitulo) {
 alterarTitulo("Aparecida Nutricionista");
 
 processarPacientes();
+prepararFiltroPaciente();
 criarEventoAdicionarPaciente();
 prepararRemocaoDePaciente();
